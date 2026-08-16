@@ -1,0 +1,13 @@
+# Node
+node_modules/
+*.log
+npm-debug.log*
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 临时/备份
+*.tmp
+*.bak

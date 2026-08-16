@@ -1,0 +1,70 @@
+{
+  "name": "dsh-zh-cn",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness 中文界面插件 (Simplified Chinese UI plugin): 强制简体中文界面，补全官方 zh 字典缺失的翻译（轨迹工具栏等），并把轨迹视图等处的硬编码英文标签替换为中文。",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types",
+    "cordis.patch.yml"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "plugin",
+    "web-ui",
+    "zh",
+    "chinese",
+    "i18n",
+    "locale",
+    "中文化"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-trajectory",
+        "@deepseek-ai/dsh-client-ui-cordis",
+        "@deepseek-ai/dsh-client-ui-model-selection",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-settings-models",
+        "@deepseek-ai/dsh-client-ui-settings-plugins",
+        "@deepseek-ai/dsh-client-ui-skill",
+        "@deepseek-ai/dsh-client-ui-tool",
+        "@deepseek-ai/dsh-client-ui-agent-preset",
+        "@deepseek-ai/dsh-client-ui-plan",
+        "@deepseek-ai/dsh-client-ui-user-questions"
+      ],
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-client-locale": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-client-runtime": "^0.1.0-rc.6"
+  }
+}
