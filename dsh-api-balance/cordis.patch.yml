@@ -1,0 +1,10 @@
+# dsh-api-balance profile patch layer — insert one loader entry for the
+# plugin package. The host half (`lib/index.js`) registers the same-origin
+# /dsh-balance route on the web server; the browser half is picked up by
+# dsh-client-modules through the package's dsh.client declaration, exactly
+# like the shipped ui-* packages.
+- insert:
+    - id: api-balance
+      name: 'dsh-api-balance'
+      inject:
+        - webServer
